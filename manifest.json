@@ -1,0 +1,31 @@
+  {
+    "name": "Rick Rollette",
+    "version": "1.0",
+    "description": "See how many links you can click before getting Rickrolled.",
+    "permissions": ["declarativeContent", "storage"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/rick16.png",
+            "32": "images/rick32.png",
+            "48": "images/rick48.png",
+            "128": "images/rick128.png"
+          }
+    },
+    "icons": {
+        "16": "images/rick16.png",
+        "32": "images/rick32.png",
+        "48": "images/rick48.png",
+        "128": "images/rick128.png"
+      },
+    "manifest_version": 2,
+    "content_scripts": [{
+        "js": ["roller.js"],
+        "matches": ["*://*.google.com/*",
+                     "*://*.wikipedia.org/*"]
+      }]
+  }
